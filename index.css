@@ -3,3 +3,9 @@ tr td {
 	height: 16px;
 	background-color: tan;
 }
+
+.score {
+	position: relative;
+	left: 820px;
+	display: inline;
+}

@@ -4,14 +4,7 @@
 	<title>Welcome to The Lyricist</title>
 	<link href="./index.css" rel="stylesheet" type="text/css">
 	<script src="index.js"></script>
-</head>
-<body>
-	<h1><b>Pandas</b></h1>
-	<br>
-	<input type="text">
-	<br>
-	<table>
-	<script>
+	<script>	
 		var num = getParameterByName("wordcount");
 		if(num == ""){
 			num = 0;
@@ -19,6 +12,21 @@
 		else{
 			num = parseInt(num);
 		}
+	</script>
+</head>
+<body>
+	<h1><b>Pandas</b></h1>
+	<br>
+	<div style="width: 1073px; text-align: center;">
+		<h1 style="display: inline;">???</h1>
+	</div>
+	<div style="width:100%;">
+		<input type="text" style="display: inline; width: 153px;">
+		<h2 class="score"><b><script>document.write(0+"/"+num);</script></b></h2>
+	</div>
+	<br>
+	<table>
+	<script>
 		for(var i=0;i<Math.floor(num/7); i++){
 			document.write("<tr><td id='word"+((i*7))+"'></td><td id='word"+((i*7)+1)+"'></td><td id='word"+((i*7)+2)+"'></td><td id='word"+((i*7)+3)+"'></td><td id='word"+((i*7)+4)+"'></td><td id='word"+((i*7)+5)+"'></td><td id='word"+((i*7)+6)+"'></td></tr>");
 		}
