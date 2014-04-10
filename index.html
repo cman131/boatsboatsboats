@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Welcome to The Lyricist</title>
-  </head>
-  <body>
-    Pandas
-  </body>
+<head>
+	<title>Welcome to The Lyricist</title>
+	<link href="./index.css" rel="stylesheet" type="text/css">
+	<script src="index.js"></script>
+</head>
+<body>
+	<h1><b>Pandas</b></h1>
+	<br>
+	<input type="text">
+	<br>
+	<table>
+	<script>
+		var num = getParameterByName("wordcount");
+		if(num == ""){
+			num = 0;
+		}
+		else{
+			num = parseInt(num);
+		}
+		for(var i=0;i<Math.floor(num/7); i++){
+			document.write("<tr><td id='word"+((i*7))+"'></td><td id='word"+((i*7)+1)+"'></td><td id='word"+((i*7)+2)+"'></td><td id='word"+((i*7)+3)+"'></td><td id='word"+((i*7)+4)+"'></td><td id='word"+((i*7)+5)+"'></td><td id='word"+((i*7)+6)+"'></td></tr>");
+		}
+		if(Math.floor(num/7)*7<num){
+			document.write("<tr>");
+			for(i=0;i<num-(Math.floor(num/7)*7); i++){
+				document.write("<td id='word"+(Math.floor(num/7)*7+i)+"'></td>");
+			}
+			document.write("</tr>");
+		}
+	</script>
+	</table>
+</body>
 </html>
