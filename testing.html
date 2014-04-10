@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+function pullData(){
+	getLyric("loldata");
+}
+
+function getLyric(maybegivemedataatsomepoint){
+	var lyrics = "";
+	//Why doesnt this work
+	$.get("http://api.metrolyrics.com/v1/search/lyrics/?find=welcome%20to%20the%20jungle&X-API-KEY=1234567890123456789012345678901234567890", function(data, status){
+
+		document.getElementById("output").innerHTML = data;
+	});
+}
+
+</script>
+</head>
+<button id="pulldata" onclick="pullData()">Pull Data</button>
+<div id="output">No Output</div>
+
+
+</html>
