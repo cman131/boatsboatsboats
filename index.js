@@ -3,6 +3,14 @@ function update() {
 	document.getElementById("score").innerHTML = score+"/"+num;
 }
 
+function size(obj){
+	var size = 0, key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+    }
+    return size + 1;
+}
+
 function checkDatLyric(lyric){
 	return lyrics[lyric]!=null;
 }

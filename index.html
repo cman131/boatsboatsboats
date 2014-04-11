@@ -6,8 +6,8 @@
 	<script src="index.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script>	
-		lyrics = {"the":[0,3], "walrus":[1], "is":[2], "best":[4]};
-		var num = getParameterByName("wordcount");
+		lyrics = {"the":[[0,"The"],[3,"the"]], "panda":[[1,"panda"]], "is":[[2,"is"]], "best":[[4,"best."]]};
+		var num = size(lyrics);
 		if(num == ""){
 			num = 0;
 		}
@@ -17,11 +17,11 @@
 		function fire() {
 			if($("#tryhard").val()!=null){
 				var checkIt = strippinTime($("#tryhard").val().toLowerCase());
-				var actual = $("#tryhard").val();
 				if (checkDatLyric(checkIt)){
 					for(var i=0; i<lyrics[checkIt].length; i++){
-						if(document.getElementById("word"+lyrics[checkIt][i]).innerHTML != actual){
-							document.getElementById("word"+lyrics[checkIt][i]).innerHTML = actual;
+						var actual = lyrics[checkIt][i][1];
+						if(document.getElementById("word"+lyrics[checkIt][i][0]).innerHTML != actual){
+							document.getElementById("word"+lyrics[checkIt][i][0]).innerHTML = actual;
 							score+=1;
 							$("#tryhard").val("");
 						}
