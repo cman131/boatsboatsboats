@@ -17,12 +17,15 @@
 		function fire() {
 			if($("#tryhard").val()!=null){
 				var checkIt = strippinTime($("#tryhard").val().toLowerCase());
+				var actual = $("#tryhard").val();
 				if (checkDatLyric(checkIt)){
 					for(var i=0; i<lyrics[checkIt].length; i++){
-						document.getElementById("word"+lyrics[checkIt][i]).innerHTML = $("#tryhard").val();
-						score+=1;
+						if(document.getElementById("word"+lyrics[checkIt][i]).innerHTML != actual){
+							document.getElementById("word"+lyrics[checkIt][i]).innerHTML = actual;
+							score+=1;
+							$("#tryhard").val("");
+						}
 					}
-					$("#tryhard").val("");
 					update();
 				}
 			}
