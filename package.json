@@ -1,0 +1,8 @@
+{
+  "name": "boatsboatsboats",
+
+  "devDependencies": {
+    "grunt": "0.4.4",
+    "grunt-http-server": "0.0.4"
+  }
+}
