@@ -4,13 +4,28 @@
 	<title>Welcome to The Lyricist</title>
 	<link href="./index.css" rel="stylesheet" type="text/css">
 	<script src="index.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script>	
+		lyrics = {"the":[0,3], "walrus":[1], "is":[2], "best":[4]};
 		var num = getParameterByName("wordcount");
 		if(num == ""){
 			num = 0;
 		}
 		else{
 			num = parseInt(num);
+		}
+		function fire() {
+			if($("#tryhard").val()!=null){
+				var checkIt = strippinTime($("#tryhard").val().toLowerCase());
+				if (checkDatLyric(checkIt)){
+					for(var i=0; i<lyrics[checkIt].length; i++){
+						document.getElementById("word"+lyrics[checkIt][i]).innerHTML = $("#tryhard").val();
+						score+=1;
+					}
+					$("#tryhard").val("");
+					update();
+				}
+			}
 		}
 	</script>
 </head>
@@ -21,8 +36,8 @@
 		<h1 style="display: inline;">???</h1>
 	</div>
 	<div style="width:100%;">
-		<input type="text" style="display: inline; width: 153px;">
-		<h2 class="score"><b><script>document.write(0+"/"+num);</script></b></h2>
+		<input id="tryhard" oninput="fire();" type="text" style="display: inline; width: 153px;">
+		<h2 class="score"><b id="score"><script>document.write(score+"/"+num);</script></b></h2>
 	</div>
 	<br>
 	<table>
