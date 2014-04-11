@@ -1,6 +1,10 @@
 var score = 0;
 function update() {
 	document.getElementById("score").innerHTML = score+"/"+num;
+	if(score == num){
+		alert("Good Job!!!");
+		document.getElementById("totallySecretTitle").innerHTML = songTitle;
+	}
 }
 
 function size(obj){

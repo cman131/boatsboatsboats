@@ -5,7 +5,8 @@
 	<link href="./index.css" rel="stylesheet" type="text/css">
 	<script src="index.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script>	
+	<script>
+		songTitle = "Pandama Sam"
 		lyrics = {"the":[[0,"The"],[3,"the"]], "panda":[[1,"panda"]], "is":[[2,"is"]], "best":[[4,"best."]]};
 		var num = size(lyrics);
 		if(num == ""){
@@ -33,10 +34,10 @@
 	</script>
 </head>
 <body>
-	<h1><b>Pandas</b></h1>
+	<h1><b>Can you guess this song?</b></h1>
 	<br>
 	<div style="width: 1073px; text-align: center;">
-		<h1 style="display: inline;">???</h1>
+		<h1 id="totallySecretTitle" style="display: inline;">???</h1>
 	</div>
 	<div style="width:100%;">
 		<input id="tryhard" oninput="fire();" type="text" style="display: inline; width: 153px;">
