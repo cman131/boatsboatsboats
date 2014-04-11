@@ -8,11 +8,12 @@ function pullData(){
 }
 
 function getLyric(maybegivemedataatsomepoint){
+	var key = "1744566/d610f266408d6d215780cfcc4ba7e031"
 	var lyrics = "";
 	//Why doesnt this work
-	$.get("http://api.metrolyrics.com/v1/search/lyrics/?find=welcome%20to%20the%20jungle&X-API-KEY=1234567890123456789012345678901234567890", function(data, status){
-
-		document.getElementById("output").innerHTML = data;
+	$.get("http://lyrics.com/user/api/"+key+"/top_tracks/10", function(data, status){
+		alert("stuff?");
+		//document.getElementById("output").innerHTML = data;
 	});
 }
 
