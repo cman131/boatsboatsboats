@@ -7,6 +7,23 @@ function update() {
 	}
 }
 
+function parseLyrics(lies){
+	var fin={};
+	var a=lies.split(" ");
+	for (var i = 0; i < a.length; i++) {
+		var n = strippinTime(a[i]).toLowerCase();
+		if(fin[n]==null){
+			fin[n]=[[i,a[i]]];
+		}
+		else {
+			var temp = fin[n];
+			var temp2 = [[i,a[i]]];
+			fin[n]=temp.concat(temp2);
+		}
+	}
+	return [fin,a.length];
+}
+
 function size(obj){
 	var size = 0, key;
     for (key in obj) {
