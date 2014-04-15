@@ -40,18 +40,24 @@
 </head>
 <body>
 	<nav class="header">
+	<div class="headContent">
 		<br>
-		<div style="width: 1073px; text-align: center;">
+		<div style="width: 100%; text-align: center;">
 			<h1 id="totallySecretTitle" style="display: inline;">???</h1>
 			<br><a href="#" id="secretKiller" onclick="$('#secretKiller').css('visibility', 'hidden'); document.getElementById('totallySecretTitle').innerHTML = songTitle;">show</a>
 		</div>
 		<div style="width:100%;">
-			<input id="tryhard" class="inputs" oninput="fire();" type="text" style="display: inline; width: 153px;">
-			<h2 class="score"><b id="score"><script>document.write(score+"/"+num);</script></b></h2>
+			<div id="in" style="width: 60%; margin: 0;">
+				<input id="tryhard" class="inputs" oninput="fire();" type="text" style="display: inline; width: 153px;">
+			</div>
+			<div class="score">
+				<h2 class="scorer"><b id="score"><script>document.write(score+"/"+num);</script></b></h2>
+			</div>
 		</div>
 		<br>
+	</div>
 	</nav>
-	<table style="top: 122px; position: relative; z-index: -2;">
+	<table style="position: relative; z-index: -2; margin: 0 auto; margin-top: 140px;">
 	<script>
 		for(var i=0;i<Math.floor(num/7); i++){
 			document.write("<tr><td id='word"+((i*7))+"'></td><td id='word"+((i*7)+1)+"'></td><td id='word"+((i*7)+2)+"'></td><td id='word"+((i*7)+3)+"'></td><td id='word"+((i*7)+4)+"'></td><td id='word"+((i*7)+5)+"'></td><td id='word"+((i*7)+6)+"'></td></tr>");
