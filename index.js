@@ -13,6 +13,10 @@ function parseLyrics(lies){
 	var a=lies.split(" ");
 	for (var i = 0; i < a.length; i++) {
 		var n = strippinTime(a[i]).toLowerCase();
+		if(n.length>12){
+			console.log(n);
+			n = n.substring(0,2);
+		}
 		if(fin[n]==null){
 			fin[n]=[[i,a[i]]];
 		}
