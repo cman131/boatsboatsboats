@@ -43,11 +43,11 @@
 	<div class="headContent">
 		<br>
 		<div style="width: 100%; text-align: center;">
-			<h1 id="totallySecretTitle" style="display: inline;">???</h1>
+			<h1 id="totallySecretTitle">???</h1>
 			<br><a href="#" id="secretKiller" onclick="$('#secretKiller').css('visibility', 'hidden'); document.getElementById('totallySecretTitle').innerHTML = songTitle;">show</a>
 		</div>
 		<div style="width:100%;">
-			<div id="in" style="width: 60%; margin: 0;">
+			<div id="in">
 				<input id="tryhard" class="inputs" oninput="fire();" type="text" style="display: inline; width: 153px;">
 			</div>
 			<div class="score">
@@ -57,7 +57,7 @@
 		<br>
 	</div>
 	</nav>
-	<table style="position: relative; z-index: -2; margin: 0 auto; margin-top: 140px;">
+	<table>
 	<script>
 		for(var i=0;i<Math.floor(num/7); i++){
 			document.write("<tr><td id='word"+((i*7))+"'></td><td id='word"+((i*7)+1)+"'></td><td id='word"+((i*7)+2)+"'></td><td id='word"+((i*7)+3)+"'></td><td id='word"+((i*7)+4)+"'></td><td id='word"+((i*7)+5)+"'></td><td id='word"+((i*7)+6)+"'></td></tr>");

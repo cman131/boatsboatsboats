@@ -4,6 +4,7 @@ function update() {
 	if(score == num){
 		alert("Good Job!!!");
 		document.getElementById("totallySecretTitle").innerHTML = songTitle;
+		$("#secretKiller").css("visibility","hidden");
 	}
 }
 

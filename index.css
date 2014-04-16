@@ -1,13 +1,30 @@
+body {
+	font-family: "Helvetica Standard", helvetica, serif;
+}
+
+#totallySecretTitle {
+	display: inline;
+}
+
 tr td {
 	width: 149px;
 	height: 20px;
 	background-color: #D2B48C;
 }
 
+table {
+	position: relative;
+	z-index: -2;
+	margin: 0 auto;
+	margin-top: 140px;
+}
+
 #in {
 	position: relative;
 	float: left;
 	left: 10%;
+	width: 50%;
+	margin: 0;
 }
 
 .score {
