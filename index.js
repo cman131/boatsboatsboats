@@ -8,6 +8,14 @@ function update() {
 	}
 }
 
+function getTitle(){
+	return "Kristen Bell - Do You Wanna Build A Snowman?";
+}
+
+function getSong(){
+	return "Elsa? Do you wanna build a snowman? Come on lets go and play I never see you anymore Come out the door It's like you've gone away- We used to be best buddies And now we're not I wish you would tell me why!- Do you wanna build a snowman? It doesn't have to be a snowman. Go away, Anna Okay, bye... Do you wanna build a snowman? Or ride our bikes around the halls I think some company is overdue I've started talking to the pictures on the walls- Hang in there, Joan! It gets a little lonely All these empty rooms, Just watching the hours tick by- Tic-Tock, Tic-Tock, Tic-Tock, Tic-Tock, Tic-Tock Elsa? Please, I know you're in there, People are asking where you've been They say \"have courage\", and I'm trying to I'm right out here for you, just let me in We only have each other It's just you and me What are we gonna do? Do you wanna build a Snowman?";
+}
+
 function parseLyrics(lies){
 	var fin={};
 	var a=lies.split(" ");
