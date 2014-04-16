@@ -8,9 +8,10 @@
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	<script>
-		var songTitle = getTitle();
-		var full = getSong();
-		var datTemp = parseLyrics(full);
+		var datTemp = getSong();
+		var songTitle = datTemp[0];
+		var full = datTemp[1];
+		datTemp = parseLyrics(full);
 		var lyrics = datTemp[0];
 		var num = datTemp[1];
 		if(num == ""){
