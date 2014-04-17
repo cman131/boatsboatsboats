@@ -9,6 +9,9 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	<script>
 		var datTemp = getSong();
+		var secs = 0;
+		var min = 0;
+		var timerOn = true;
 		var songTitle = datTemp[0];
 		var full = datTemp[1];
 		datTemp = parseLyrics(full);
@@ -52,7 +55,8 @@
 				<input id="tryhard" class="inputs" oninput="fire();" type="text" style="display: inline; width: 153px;">
 			</div>
 			<div class="score">
-				<h2 class="scorer"><b id="score"><script>document.write(score+"/"+num);</script></b></h2>
+				<h2 class="timer"><b id="timer">Time: 0:00</b></h2>
+				<h2 class="scorer"><b id="score"><script>document.write("Score: "+score+"/"+num);</script></b></h2>
 			</div>
 		</div>
 		<br>
@@ -73,6 +77,22 @@
 	</script>
 	</table>
 	<script>
+		var interVal = null;
+		
+		interVal = setInterval(function(){
+				if(timerOn){
+					secs+=1;
+					if(secs==60){
+						min+=1;
+						secs=0;
+					}
+					document.getElementById("timer").innerHTML="Time: "+min+":"+(secs<10 ? "0"+secs : secs);
+				}
+				else{
+					console.log("ended");
+					clearInterval(interVal);
+				}
+		}, 1000);
 		$(window).scroll(function(e){
 			if($("nav").offset().top !== 0){
 				if(!$("nav").hasClass('shadow')){
