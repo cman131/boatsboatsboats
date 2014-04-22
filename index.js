@@ -32,6 +32,9 @@ function parseLyrics(lies){
 			console.log(n);
 			n = n.substring(0,2);
 		}
+		else if(n=="watch") {
+			n = "watc";
+		}
 		if(fin[n]==null){
 			fin[n]=[[i,a[i]]];
 		}
