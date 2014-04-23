@@ -48,6 +48,49 @@ table {
 	float: right;
 }
 
+#scoreMod {
+	opacity: 0;
+	position: absolute;
+	display: block;
+	left: 67%;
+}
+.uptime {
+	-webkit-animation: move-up 600ms ease-in;
+	-moz-animation: move-up 600ms ease-in;
+        animation: move-up 600ms ease-in;
+}
+
+@webkit-keyframes move-up { 
+	0% { 
+		top: 25px; 
+		opacity: 1; 
+	} 
+	100% { 
+		top: -50px; 
+		opacity: 0; 
+	} 
+} 
+@-moz-keyframes move-up { 
+	0% { 
+		top: 25px; 
+		opacity: 1; 
+	} 
+	100% { 
+		top: -50px; 
+		opacity: 0; 
+	} 
+} 
+@keyframes move-up { 
+	0% { 
+		top: 25px; 
+		opacity: 1; 
+	} 
+	100% { 
+		top: -50px; 
+		opacity: 0; 
+	} 
+}
+
 inputs:-webkit-input-placeholder { 
     color:    #b5b5b5; 
 } 

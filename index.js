@@ -1,5 +1,13 @@
 var score = 0;
 function update() {
+	var sar = score-parseInt($('#score').text().split("/")[0].split(" ")[1]);
+	console.log(sar);
+	if(sar>0){
+		$("#scoreMod").text(sar);
+		$("#scoreMod").css("top", "25px");
+		$("#scoreMod").css("opacity", 1);
+		$("#scoreMod").animate({top: "-50px", opacity: 0}, 600);
+	}
 	document.getElementById("score").innerHTML = "Score: "+score+"/"+num;
 	if(score == num){
 		alert("Good Job!!!");
@@ -28,12 +36,19 @@ function parseLyrics(lies){
 	var a=lies.split(" ");
 	for (var i = 0; i < a.length; i++) {
 		var n = strippinTime(a[i]).toLowerCase();
+		if(a[i].length>18){
+			var end="";
+			for(var j=12; j<a[i].length; j+=12){
+				end+=a[i].substring(j-12, j)+"\n";
+			}
+			a[i]=end;
+		}
 		if(n.length>12){
 			console.log(n);
 			n = n.substring(0,2);
 		}
-		else if(n=="watch") {
-			n = "watc";
+		else if(typeof(fin[n])=="function") {
+			fin[n]=null;
 		}
 		if(fin[n]==null){
 			fin[n]=[[i,a[i]]];

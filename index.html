@@ -34,9 +34,10 @@
 							$("#word"+lyrics[checkIt][i][0]).animate({ backgroundColor: "#F4A460"});
 							score+=1;
 							$("#tryhard").val("");
-							update();
+							
 						}
 					}
+					update();
 				}
 			}
 		}
@@ -56,7 +57,7 @@
 			</div>
 			<div class="score">
 				<h2 class="timer"><b id="timer">Time: 0:00</b></h2>
-				<h2 class="scorer"><b id="score"><script>document.write("Score: "+score+"/"+num);</script></b></h2>
+				<h2 class="scorer"><div id="scoreMod"></div><b id="score"><script>document.write("Score: "+score+"/"+num);</script></b></h2>
 			</div>
 		</div>
 		<br>
