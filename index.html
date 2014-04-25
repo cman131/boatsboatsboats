@@ -8,7 +8,12 @@
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	<script>
-		var datTemp = getSong();
+		var songParam = getParameterByName("song");
+		var select=-1;
+		if(songParam!="" && isInt(songParam)){
+			select = parseInt(songParam);
+		}
+		var datTemp = getSong(select);
 		var secs = 0;
 		var min = 0;
 		var timerOn = true;
