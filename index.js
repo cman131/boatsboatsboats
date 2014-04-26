@@ -8,7 +8,7 @@ function update() {
 		$("#scoreMod").animate({top: "-50px", opacity: 0}, 600);
 	}
 	document.getElementById("score").innerHTML = "Score: "+score+"/"+num;
-	if(score == num && !timerOn){
+	if(score == num && timerOn){
 		$.blockUI({message: "<h1>You have won!</h1><button class='specialButton' onclick='$.unblockUI();'>OK</button>"});
 		$(".blockUI")[0].style.cursor = "default";
 		$(".blockUI")[1].style.cursor = "default";
