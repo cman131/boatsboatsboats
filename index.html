@@ -84,6 +84,9 @@
 	</table>
 	<script>
 		$(document).ready(function(){
+			if (getParameterByName("cheat")!=""){
+				$("#secretKiller").click();
+			}
 			document.getElementById("tryhard").focus();
 		});
 		var interVal = null;
