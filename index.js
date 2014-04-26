@@ -3,7 +3,7 @@ function update() {
 	var sar = score-parseInt($('#score').text().split("/")[0].split(" ")[1]);
 	console.log(sar);
 	if(sar>0){
-		$("#scoreMod").text(sar);
+		$("#scoreMod").text("+"+sar);
 		$("#scoreMod").css("top", "25px");
 		$("#scoreMod").css("opacity", 1);
 		$("#scoreMod").animate({top: "-50px", opacity: 0}, 600);
