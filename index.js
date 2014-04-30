@@ -1,4 +1,5 @@
 var score = 0;
+var cheat = false;
 function update() {
 	var sar = score-parseInt($('#score').text().split("/")[0].split(" ")[1]);
 	if(sar>0){
@@ -9,6 +10,19 @@ function update() {
 	}
 	document.getElementById("score").innerHTML = "Score: "+score+"/"+num;
 	if(score == num && timerOn){
+		var good = true;
+		if(document.getElementById("bestTime").innerHTML != "Best Time: None"){
+			var mehTemp = document.getElementById("bestTime").innerHTML.split(" ")[2].split(":");
+			good = parseInt(mehTemp[0])>min || (parseInt(mehTemp[0])==min && parseInt(mehTemp[1])>secs);
+		}
+		if(!cheat && good){
+			if(!window.localStorage.bestTime){window.localStorage.bestTime=JSON.stringify({});}
+			var murrel = "Best Time: "+min+":"+(secs<10 ? "0"+secs : secs);
+			var truni = JSON.parse(window.localStorage.bestTime);
+			truni[songTitle] = murrel;
+			window.localStorage.bestTime = JSON.stringify(truni);
+			document.getElementById("bestTime").innerHTML = murrel;
+		}
 		$.blockUI({message: "<h1>You have won!</h1><button class='specialButton' onclick='$.unblockUI();'>OK</button>"});
 		$(".blockUI")[0].style.cursor = "default";
 		$(".blockUI")[1].style.cursor = "default";
@@ -149,9 +163,12 @@ function checkDatLyric(lyric){
 }
 
 function cheatinTime(){
-	for (key in lyrics) {
-		document.getElementById("tryhard").value = key;
-		fire();
+	if(timerOn){
+		cheat=true;
+		for (key in lyrics) {
+			document.getElementById("tryhard").value = key;
+			fire();
+		}
 	}
 }
 

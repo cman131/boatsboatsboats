@@ -1,0 +1,15 @@
+<html>
+<head>
+<script>
+	var fs = require('fs');
+	var file = fs.open("highScore.yoho",'rs+');
+</script>
+</head>
+<body>
+<script>
+	for(line in file){
+		document.write(line);
+	}
+</script>
+</body>
+</html>

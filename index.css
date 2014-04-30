@@ -17,8 +17,17 @@ body {
 
 .timer {
 	margin: 0;
-	width: 50%;
+	width: 33%;
 	float: left;
+}
+
+.bestTimer {
+	float: left;
+	display: inline-block;
+	position: relative;
+	width: 33%;
+	margin: 0;
+	height: 100%;
 }
 
 tr td {
@@ -39,7 +48,7 @@ table {
 	position: relative;
 	float: left;
 	left: 10%;
-	width: 50%;
+	width: 30%;
 	margin: 0;
 }
 
@@ -47,13 +56,13 @@ table {
 	float: right;
 	position: relative;
 	margin: 0;
-	width: 40%;
+	width: 60%;
 	height: 100%;
 }
 
 .scorer {
 	margin: 0;
-	width: 50%;
+	width: 33%;
 	float: right;
 }
 

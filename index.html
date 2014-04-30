@@ -64,6 +64,7 @@
 			</div>
 			<div class="score">
 				<h2 class="timer"><b id="timer">Time: 0:00</b></h2>
+				<h2 class="bestTimer"><b id="bestTime">Best Time: None</b></h2>
 				<h2 class="scorer"><div id="scoreMod"></div><b id="score"><script>document.write("Score: 0/"+num);</script></b></h2>
 			</div>
 		</div>
@@ -86,6 +87,12 @@
 	</table>
 	<script>
 		$(document).ready(function(){
+			if(window.localStorage.bestTime){
+				var trempsy = JSON.parse(window.localStorage.bestTime);
+				if(trempsy[songTitle]){
+					document.getElementById("bestTime").innerHTML = trempsy[songTitle];
+				}
+			}
 			if (getParameterByName("cheat")!=""){
 				$("#secretKiller").click();
 			}
