@@ -29,7 +29,7 @@ function update() {
 			document.getElementById("bestTime").innerHTML = murrel;
 		}
 		// Broadcast win message and stop timer
-		$.blockUI({message: "<h1>You have won!</h1><button class='specialButton' onclick='$.unblockUI();'>OK</button>"});
+		$.blockUI({message: "<h1>You have won!</h1><a class='superButton specialButton' onclick='$.unblockUI();'>OK</a>"});
 		$(".blockUI")[0].style.cursor = "default";
 		$(".blockUI")[1].style.cursor = "default";
 		$(".blockUI")[2].style.cursor = "default";

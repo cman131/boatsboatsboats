@@ -8,11 +8,9 @@ body {
 
 .specialButton {
 	cursor: pointer;
-    cursor: hand;
-	width: 40%;
-	height: 30%;
-	padding-bottom: 2%;
-	padding-top: 2%;
+    	cursor: hand;
+	margin-bottom: 10px;
+	margin-top: 15px;
 }
 
 .timer {
@@ -127,6 +125,8 @@ nav {
 
 body {
 	margin: 0;
+	padding-bottom: 25px;
+
 }
 
 .headContent {

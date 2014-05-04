@@ -127,6 +127,11 @@
 				$("nav").removeClass('shadow');
 			}
 		});
+		$(window).keypress(function(e){
+			if(e.keyCode==13){
+				$.unblockUI();
+			}
+		});
 	</script>
 </body>
 </html>
