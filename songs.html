@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Song Selection - The Lyricist</title>
+    <script src="songs.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type='text/javascript'>
+      $(document).ready(function() {
+        var _songTitles = getSongTitles();
+        var $_songList = $('#song-list-container');
+
+        var i;
+        for (i = 0; i < _songTitles.length; i++) {
+          var url = "http://cman131.github.io/boatsboatsboats/?song=" + i;
+          var $link = $('<a />').
+                    attr('href', url).
+                    text(_songTitles[i]);
+          var $li = $('<li />').append($link);
+
+          $_songList.append($li);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <ul id='song-list-container' />
+  </body>
+</html>
