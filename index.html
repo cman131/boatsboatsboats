@@ -19,8 +19,8 @@
 		var secs = 0;
 		var min = 0;
 		var timerOn = true;
-		var songTitle = datTemp[0];
-		var full = datTemp[1];
+		var songTitle = datTemp.artist + ' - ' + datTemp.track;
+		var full = datTemp.lyrics;
 		datTemp = parseLyrics(full);
 		var lyrics = datTemp[0];
 		var num = datTemp[1];
