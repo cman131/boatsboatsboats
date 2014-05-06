@@ -7,15 +7,15 @@
 	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <script type='text/javascript'>
       $(document).ready(function() {
-        var _songTitles = getSongTitles();
         var $_songList = $('#song-list-container');
 
         var i;
-        for (i = 0; i < _songTitles.length; i++) {
+        for (i = 0; i < songs.length; i++) {
+          var song = songs[i];
           var url = "./index.html?cheat=2&song=" + i;
           var $link = $('<a />').
                     attr('href', url).
-                    text(_songTitles[i]);
+                    text(song.artist + ' - ' + song.track);
           var $li = $('<li />').append($link);
 
           $_songList.append($li);
