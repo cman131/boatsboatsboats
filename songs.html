@@ -27,7 +27,7 @@
         }
       };
 
-      var _filterSongsToSearch = function() {
+      var _filterSongsToSearch = _.debounce(function() {
         var songList = songs;
 
         var searchTerm = $('#search-bar').val().toUpperCase();
@@ -36,10 +36,9 @@
           track_contains = current.track.toUpperCase().match(searchTerm);
           artist_contains = current.artist.toUpperCase().match(searchTerm);
           return track_contains || artist_contains;
-        });
-
+        })
         displaySongs(filtered);
-      };
+      }, 75);
 
       $(document).ready(function() {
         displaySongs()
