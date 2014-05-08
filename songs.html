@@ -2,17 +2,22 @@
 <html>
   <head>
     <title>Song Selection - The Lyricist</title>
-    <script src="songs.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="songs.js"></script>
     <script type='text/javascript'>
-      $(document).ready(function() {
-        var $_songList = $('#song-list-container');
+      var displaySongs = function(songList) {
+        if (songList == null) {
+          songList = songs;
+        }
+
+        var $_songList = $('#song-list-container').empty();
 
         var i;
-        for (i = 0; i < songs.length; i++) {
-          var song = songs[i];
-          var url = "./index.html?cheat=2&song=" + i;
+        for (i = 0; i < songList.length; i++) {
+          var song = songList[i];
+          var url = "./index.html?cheat=2&song=" + song.id;
           var $link = $('<a />').
                     attr('href', url).
                     text(song.artist + ' - ' + song.track);
@@ -20,11 +25,31 @@
 
           $_songList.append($li);
         }
+      };
+
+      var _filterSongsToSearch = _.debounce(function() {
+        var songList = songs;
+
+        var searchTerm = $('#search-bar').val().toUpperCase();
+        var filtered = _.filter(songList, function(current) {
+          var track_contains, artist_contains;
+          track_contains = current.track.toUpperCase().match(searchTerm);
+          artist_contains = current.artist.toUpperCase().match(searchTerm);
+          return track_contains || artist_contains;
+        })
+        displaySongs(filtered);
+      }, 75);
+
+      $(document).ready(function() {
+        displaySongs()
+        $('#search-bar').on('input', _filterSongsToSearch);
       });
     </script>
   </head>
   <body>
 	<h1 style="text-align: center;">Songs:</h1>
+  <input type='text' id='search-bar' class='form-control' style='width: 50%;
+  margin: auto;' placeholder='Search for songs...' />
 	<br>
     <ul id='song-list-container' class="nav nav-pills nav-stacked" style="text-align: center;" />
   </body>
