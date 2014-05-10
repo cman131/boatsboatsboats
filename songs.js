@@ -287,8 +287,8 @@ var songs = [
 	lyrics: "When you hit me with a beat I'm back to life When you get up on your feet I'm so alive Cause tonight became a party by surprise Baby don't you know you bring me back to life I, I've been around the world From London to Japan And every single place I go there's you Just dancing in the lights And throwing up your hands And doing what the music tells you You gotta feel it, you gotta live it, woah And if you live it, you gotta love it, woah And if you love it, you gonna feel it And it goes round and round again When you hit me with a beat I'm back to life When you get up on your feet I'm so alive Cause tonight became a party by surprise Baby don't you know you bring me back to life Yeah, you make me believe it, (you make me believe it) You make me believe it all the way Yeah, you make me believe it, (you make me believe it) You make me believe it all the way When you hit me with a beat I'm back to life When you get up on your feet I'm so alive Cause tonight became a party by surprise Baby don't you know you bring me back to life Yeah, you make me believe it, (you make me believe it) You make me believe it all the way Yeah, you make me believe it, (you make me believe it) You make me believe it all the way So, thinking 'bout the clock It doesn't matter now See all that really matters is the sound Of you and you and I exploding like a bomb Now let me buy another round yeah You gotta feel it, you gotta live it, woah And if you live it, you gotta love it, woah And if you love it, you gonna feel it And it goes round and round again When you hit me with a beat I'm back to life When you get up on your feet I'm so alive Cause tonight became a party by surprise Baby don't you know you bring me back to life Yeah, you make me believe it, (you make me believe it) You make me believe it all the way Yeah, you make me believe it, (you make me believe it) You make me believe it all the way When you hit me with a beat I'm back to life When you get up on your feet I'm so alive Cause tonight became a party by surprise Baby don't you know you bring me back to life Yeah, you make me believe it, (you make me believe it) You make me believe it all the way Yeah, you make me believe it, (you make me believe it) You make me believe it all the way Tonight became a party, party, party, party Tonight became a party, party, party Tonight became a party, party, party, party Tonight became a party, party, party, party"}
 ];
 
-//_.map(songs, function(current, idx) {
-//  return _.extend(current, {
-//    id: idx
-//  });
-//});
+_.map(songs, function(current, idx) {
+  return _.extend(current, {
+    id: idx
+  });
+});
