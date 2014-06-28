@@ -2,6 +2,16 @@
 <html>
   <head>
     <title>Song Selection - The Lyricist</title>
+    <style>
+    	.sort-btn {
+		display: inline-block;
+	}
+	#sorting {
+		margin: 0 auto;
+		margin-top: 5px;
+		text-align: center;
+	}
+    </style>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -96,7 +106,7 @@
   <header style="margin: auto; width: 50%;">
     <h1 style="text-align: center;">Songs:</h1>
     <input type='text' id='search-bar' class='form-control' placeholder='Search for songs...' />
-    <div style="width: 50%; margin: auto; margin-top: 5px;">
+    <div id="sorting">
       <button id='btn-artist' class='btn btn-default sort-btn'>Sort by Artist </button>
       <button id='btn-track' class='btn btn-default sort-btn'>Sort by Track</button>
       <button id='btn-id' class='btn btn-default sort-btn'>Sort by Song ID</button>
