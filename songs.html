@@ -2,11 +2,45 @@
 <html>
   <head>
     <title>Song Selection - The Lyricist</title>
+    <style>
+    	.sort-btn {
+		display: inline-block;
+	}
+	#sorting {
+		margin: 0 auto;
+		margin-top: 5px;
+		text-align: center;
+	}
+    </style>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="songs.js"></script>
     <script type='text/javascript'>
+      var sortBySong = function() {
+        var songList = _.sortBy(songs, function(song) {
+          return song.track;
+        });
+
+        return songList;
+      }
+
+      var sortById = function() {
+        var songList = _.sortBy(songs, function(song) {
+          return song.id;
+        });
+
+        return songList;
+      }
+
+      var sortByArtists = function() {
+        var songList = _.sortBy(songs, function(song) {
+          return song.artist;
+        });
+
+        return songList;
+      }
+
       var displaySongs = function(songList) {
         if (songList == null) {
           songList = songs;
@@ -40,16 +74,44 @@
         displaySongs(filtered);
       }, 75);
 
+      var _handleButtonPressed = function(e) {
+        var target = e.target;
+
+        var sortFunction;
+        switch (target.id) {
+          case 'btn-artist':
+            sortFunction = sortByArtists;
+            break;
+          case 'btn-track':
+            sortFunction = sortBySong;
+            break;
+          case 'btn-id':
+          default:
+            sortFunction = sortById;
+            break;
+        }
+
+        displaySongs(sortFunction());
+      }
+
       $(document).ready(function() {
         displaySongs()
         $('#search-bar').on('input', _filterSongsToSearch);
+        $('.sort-btn').on('click', _handleButtonPressed);
       });
+
     </script>
   </head>
   <body>
-	<h1 style="text-align: center;">Songs:</h1>
-  <input type='text' id='search-bar' class='form-control' style='width: 50%;
-  margin: auto;' placeholder='Search for songs...' />
+  <header style="margin: auto; width: 50%;">
+    <h1 style="text-align: center;">Songs:</h1>
+    <input type='text' id='search-bar' class='form-control' placeholder='Search for songs...' />
+    <div id="sorting">
+      <button id='btn-artist' class='btn btn-default sort-btn'>Sort by Artist </button>
+      <button id='btn-track' class='btn btn-default sort-btn'>Sort by Track</button>
+      <button id='btn-id' class='btn btn-default sort-btn'>Sort by Song ID</button>
+    </div>
+  </header>
 	<br>
     <ul id='song-list-container' class="nav nav-pills nav-stacked" style="text-align: center;" />
     <script>
