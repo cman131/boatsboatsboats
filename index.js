@@ -67,6 +67,9 @@ function parseLyrics(lies){
 		if(n.length>12){
 			n = n.substring(0,2);
 		}
+		else if(n.match(/o*oh/g).length>0){
+			n = "oh";
+		}
 		else if(typeof(fin[n])=="function") {
 			fin[n]=null;
 		}
