@@ -9,7 +9,7 @@ simply run `grunt`.  The default is to launch the server on port 8008.
 
 ## Contributing (Yay Open Source!)
 <h4>Issues</h4>
-<p>We have a nice little set of github issues that we mow through pretty quickly. If you want to suggest a feature or make a bug you found known go ahead and make an issue. Even if it is something very slight like "the cheating button should be half a pixel taller" We'd love to hear your ideas. Though some suggestions may be challenged, we still enjoy hearing them.</p>
+<p>We have a nice little set of github issues that we mow through pretty quickly. If you want to suggest a feature or log a bug you found go ahead and make an issue. Even if it is something very slight like "the cheating button should be half a pixel taller" We'd love to hear your ideas. Though some suggestions may be challenged, we still enjoy hearing them.</p>
 <h4>Pull Requests</h4>
 <p>If you want to tackle one of the issues(features, bugs, or tweaks) feel free to make a pull requests. Not all will be approved, but they're welcomed. :) Make sure that there is an issue for what your pull request will alter and reference it in the PR description.</p>
 <h4>I just want my song in...</h4>
