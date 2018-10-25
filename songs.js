@@ -1,4 +1,3 @@
-
 // Temporarily a hard static source of data, until we get the API to work.
 var songs = [{
   artist: 'Billy Joel',
